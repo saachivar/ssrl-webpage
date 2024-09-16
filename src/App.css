@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0c0030;
+}
+
+.App {
+  position: relative;
+  z-index: 1; /* Ensure your content is on top of the canvas */
+}
+
+h1, p {
+  color: white;
+}
+
