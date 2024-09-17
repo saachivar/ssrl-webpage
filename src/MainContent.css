@@ -92,6 +92,7 @@ p, li {
     max-width: 1100px;
     height: 45vh;
     overflow: hidden;
+    border-radius: 10px;
   }
   
   .image-wrapper, .text-wrapper {

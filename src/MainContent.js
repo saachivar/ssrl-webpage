@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import './MainContent.css';
 import SwipeySlider from './SwipeySlider';
 
+
 const MainContent = ({ setActiveSection, contentWrapperRef }) => {
   const sectionRefs = {
     intro: useRef(null),
@@ -56,8 +57,9 @@ const MainContent = ({ setActiveSection, contentWrapperRef }) => {
         <p>LEARNSat-1 will be an internal mission so that we can map out all the
 requirements and face logistical problems first before we invite high schools to
 participate. This would allow for more STEM students in UGA to be involved in
-CubeSat development and raise awareness of satellite technology in schools.</p>
-        <p> Additionally, as part of the funding we also have $2000 allocated to hosting a
+CubeSat development and raise awareness of satellite technology in schools. </p>
+<p>
+Additionally, as part of the funding we also have $2000 allocated to hosting a
 competition for high schools to compete in with their research proposals, with
 the best one being selected and given the funding to start developing their
 project. </p>

@@ -8,7 +8,7 @@ import MainContent from './MainContent';
 function App() {
   const [showContent, setShowContent] = useState(false);
   const [activeSection, setActiveSection] = useState('intro');
-  const contentWrapperRef = useRef(null); // Ref for content-wrapper
+  const contentWrapperRef = useRef(null); 
 
   useEffect(() => {
     const timer = setTimeout(() => {
