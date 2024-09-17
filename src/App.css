@@ -1,41 +1,3 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -44,10 +6,186 @@ body {
 
 .App {
   position: relative;
-  z-index: 1; /* Ensure your content is on top of the canvas */
-}
+  z-index: 1;
+  font-family: "Jura", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+    display: flex;
+    height: 100vh; 
+    width: 100vw; 
 
-h1, p {
+
+}
+.webpage {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+.sidebar {
+  width: 280px; 
+  height: 100%;
+  padding-left: 30px;
+  padding-top: 10px;
   color: white;
+  animation: fadeInSidebar 1.5s forwards; 
 }
 
+.main-content {
+  flex: 1; 
+  background: white;
+  padding: 20px;
+  box-sizing: border-box; 
+  height: 0;
+  overflow-y: auto; 
+  transition: height 1s ease-in-out;
+  opacity: 0; 
+  animation: fadeInContent 1s forwards; 
+  
+
+}
+
+@keyframes fadeInSidebar {
+  to {
+    opacity: 1; /* Fade in sidebar */
+  }
+}
+
+@keyframes fadeInContent {
+  from {
+    opacity: 0; /* Start hidden */
+    height: 0; /* Start with 0 height */
+  }
+  to {
+    opacity: 1; /* Fade in content */
+    height: 100vh; /* Expand to full height */
+  }
+}
+
+
+
+
+.animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.first-line {
+  font-size: 2.5rem;
+  color: white;
+  opacity: 0;
+  animation: fadeIn 1.5s forwards, fadeOut 1.5s 4s forwards; 
+}
+
+.second-line {
+  font-size: 3.5rem;
+  color: white;
+  opacity: 0;
+  animation: fadeIn 1.5s 2s forwards, fadeOut 1.5s 4s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+@keyframes fadeOut {
+  from {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+}
+@keyframes fadeInSidebar {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0c0030;
+}
+
+.App {
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  color: #fff;
+  height: 100vh;
+  padding-left: 40px;
+  padding-top: 20px;
+}
+
+.sidebar-header {
+  font-size: 2.5rem;
+}
+
+.sidebar-list {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.sidebar-item {
+  padding: 10px 0;
+  cursor: pointer;
+  transition: font-weight 0.3s ease;
+}
+
+.sidebar-item.active {
+  font-weight: bold;
+}
+
+.content-wrapper {
+  margin-left: 280px;
+  width: calc(100% - 280px);
+}
+
+
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .content-wrapper {
+    margin-left: 0;
+    width: 100%;
+  }
+}

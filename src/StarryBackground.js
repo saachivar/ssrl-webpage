@@ -17,7 +17,7 @@ const StarryBackground = () => {
         stars.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          radius: Math.random() * 1.5,
+          radius: Math.random() * 2,
           opacity: Math.random(),
         });
       }
@@ -37,8 +37,8 @@ const StarryBackground = () => {
     // Animation for twinkling effect
     function animateStars() {
       stars.forEach(star => {
-        star.opacity += (Math.random() - 0.5) * 0.05;
-        star.opacity = Math.min(1, Math.max(0, star.opacity)); // Clamp opacity between 0 and 1
+        star.opacity += (Math.random() - 0.5) * 0.09;
+        star.opacity = Math.min(1, Math.max(0, star.opacity)); 
       });
       drawStars();
       requestAnimationFrame(animateStars);
